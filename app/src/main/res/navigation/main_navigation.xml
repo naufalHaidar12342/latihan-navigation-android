@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="xyz.heydarrn.latihannavigationcomponent.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_profileActivity"
+            app:destination="@id/profileActivity" />
+        <action
+            android:id="@+id/action_homeFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="xyz.heydarrn.latihannavigationcomponent.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_detailOfCategoryFragment"
+            app:destination="@id/detailOfCategoryFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/profileActivity"
+        android:name="xyz.heydarrn.latihannavigationcomponent.ProfileActivity"
+        android:label="activity_profile"
+        tools:layout="@layout/activity_profile" />
+    <fragment
+        android:id="@+id/detailOfCategoryFragment"
+        android:name="xyz.heydarrn.latihannavigationcomponent.DetailOfCategoryFragment"
+        android:label="fragment_detail_of_category"
+        tools:layout="@layout/fragment_detail_of_category" />
+</navigation>
