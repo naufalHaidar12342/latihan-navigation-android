@@ -35,5 +35,14 @@
         android:id="@+id/detailOfCategoryFragment"
         android:name="xyz.heydarrn.latihannavigationcomponent.DetailOfCategoryFragment"
         android:label="fragment_detail_of_category"
-        tools:layout="@layout/fragment_detail_of_category" />
+        tools:layout="@layout/fragment_detail_of_category" >
+        <argument
+            android:name="nama_produk"
+            app:argType="string"
+            android:defaultValue="nama produk ditaruh disini" />
+        <argument
+            android:name="stok_produk"
+            app:argType="long"
+            android:defaultValue="0L" />
+    </fragment>
 </navigation>
