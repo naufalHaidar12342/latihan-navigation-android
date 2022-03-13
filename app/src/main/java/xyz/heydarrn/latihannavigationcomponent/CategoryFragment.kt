@@ -32,18 +32,20 @@ class CategoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonLifestyleCategory.setOnClickListener { bindCategoryButton->
-            val mBundle=Bundle()
-            mBundle.putString(EXTRA_NAME,"Lifestyle")
-            mBundle.putLong(EXTRA_STOCK,7)
-            bindCategoryButton.findNavController().navigate(R.id.action_categoryFragment_to_detailOfCategoryFragment)
+//            val mBundle=Bundle()
+//            mBundle.putString(EXTRA_NAME,"Lifestyle")
+//            mBundle.putLong(EXTRA_STOCK,7)
+//            bindCategoryButton.findNavController().navigate(R.id.action_categoryFragment_to_detailOfCategoryFragment,mBundle)
 
-//            val sendSafeArgs=CategoryFragmentDirections.actionCategoryFragmentToDetailOfCategoryFragment()
-//            bindCategoryButton.findNavController().navigate(R.id.action_categoryFragment_to_detailOfCategoryFragment)
+            val sendSafeArgs=CategoryFragmentDirections.actionCategoryFragmentToDetailOfCategoryFragment("Lifestyle",7)
+            bindCategoryButton.findNavController().navigate(sendSafeArgs)
         }
         binding.imgAndroid.setImageResource(R.drawable.ic_baseline_android_24)
 
     }
 
-
-
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding=null
+    }
 }
