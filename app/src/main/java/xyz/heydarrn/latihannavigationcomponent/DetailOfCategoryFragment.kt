@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import xyz.heydarrn.latihannavigationcomponent.databinding.FragmentDetailOfCategoryBinding
 
@@ -43,6 +44,11 @@ class DetailOfCategoryFragment : Fragment() {
         binding.textViewCategoryName.text=dataName
 
         binding.textViewCategoryDescription.text="Stok : $dataItemStock"
+
+        binding.buttonBackHome.setOnClickListener(
+            Navigation
+                .createNavigateOnClickListener(R.id.action_detailOfCategoryFragment_to_homeFragment)
+        )
 
     }
 
